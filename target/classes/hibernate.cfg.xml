@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.url">jdbc:mysql://localhost:3306/todo</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<!-- to set dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- update changes in db -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- see sql query run by hibernate -->
+		<property name="show_sql">true</property>
+		<!-- map class as an entity -->
+		<property name="format_sql">true</property>
+		<mapping class="com.todo.servlet.SaveNote"></mapping>
+		<mapping class="com.todo.entities.Note"></mapping>
+		<mapping class="com.todo.helper.FactoryProvider"></mapping>
+		
+
+	</session-factory>
+
+</hibernate-configuration>
